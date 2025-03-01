@@ -6,111 +6,123 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <title>Elysian Hotel System</title>
     <style>
-        .bg1{
+        .bg1 {
             position: absolute;
             z-index: -2;
         }
-        .divbg{
+        .divbg {
             height: 100%;
             background: transparent;
             border-left: 100px solid #fff;
             border-bottom: 100vh solid transparent;
             box-sizing: border-box;
         }
-
-        .content{
+        .content {
             position: absolute;
             z-index: -1;
         }
-
         @media screen and (min-width:640px) {
-              .bg1{
-            position: absolute;
-            z-index: -2;
-        }
-        
-        .divbg{
-            height: 100%;
-            background: transparent;
-            border-left: 300px solid #fff;
-            border-bottom: 100vh solid transparent;
-            box-sizing: border-box;
-        }
-
-        .content{
-            position: absolute;
-            z-index: -1;
-        }
+            .divbg {
+                border-left: 300px solid #fff;
+            }
         }
     </style>
 </head>
 <body>
     <div class="bg1 h-screen w-screen flex items-center justify-start">
-        <div class=" h-screen w-auto bg-white sm:w-1/2"></div>
-        <div class=" h-screen w-full sm:w-1/2">
-        <img src="img/bg.jpg" alt="" class="w-full h-screen">
+        <div class="h-screen w-auto bg-white sm:w-1/2"></div>
+        <div class="h-screen w-full sm:w-1/2">
+            <img src="img/bg.jpg" alt="" class="w-full h-screen">
         </div>
     </div>
-    <div class="content flex items-center  justify-start h-screen w-screen ">
-    <div class="h-screen bg-white w-1/2"></div>
-    <div class="divbg border-white h-screen w-1/2"></div>
+    <div class="content flex items-center justify-start h-screen w-screen">
+        <div class="h-screen bg-white w-1/2"></div>
+        <div class="divbg border-white h-screen w-1/2"></div>
     </div>
 
-    <div class=" flex items-center  justify-start h-screen w-screen 2xl:pl-40 ">
-        <div class=" h-screen w-1/2">
-<div class="h-30 pl-5: lg:pl-10">
-    <img src="img/logo1.png" alt="" class="w-30">
-</div>
+    <div class="flex items-center justify-start h-screen w-screen 2xl:pl-40">
+        <div class="h-screen w-1/2">
+            <div class="h-30 pl-5 lg:pl-10">
+                <img src="img/logo1.png" alt="" class="w-30">
+            </div>
 
-    <div class="pl-5 lg:pl-20 w-60 h-40 flex items-center justify-center sm:p-10 sm:h-auto sm:w-150 xl:w-250  ">
-        <p class="text-l sm:text-4xl xl:text-6xl font-bold text-zinc-950 ">Welcome to Elysian Heights Hotel Management System</p>
+            <div class="pl-5 lg:pl-20 w-60 h-40 flex items-center justify-center sm:p-10 sm:h-auto sm:w-150 xl:w-250">
+                <p class="text-l sm:text-4xl xl:text-6xl font-bold text-zinc-950">
+                    Welcome to Elysian Heights Hotel Management System
+                </p>
+            </div>
+
+            <div class="pl-5 w-70 lg:mt-10 lg:w-100 lg:pl-20 sm:pl-10 pr-0 mb-0">
+                <div class="flex space-x-4 mb-4">
+                    <button id="signInBtn" class="text-gray-900 font-semibold">Sign In</button>
+                    <button id="registerBtn" class="text-gray-400 font-semibold">Register</button>
+                </div>
+                <form id="signInForm" class="space-y-6">
+                    <div class="border-slate-200 border-1 bg-white rounded-lg p-5 space-y-6">
+                        <div>
+                            <label for="email" class="block sm:text-sm/6 text-sm font-medium text-gray-900">Username</label>
+                            <input type="email" name="email" id="email" required placeholder="Enter your username" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-yellow-800">
+                        </div>
+
+                        <div>
+                            <label for="password" class="block sm:text-sm/6 text-sm font-medium text-gray-900">Password</label>
+                            <input type="password" name="password" id="password" required placeholder="Enter your password" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-yellow-800">
+                        </div>
+
+                        <div class=" flex justify-between text-sm">
+                            <a href="#" class="font-semibold text-sky-600 hover:text-sky-500">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="flex w-full justify-center rounded-md bg-amber-950 px-3 py-1.5 text-sm font-semibold text-white shadow-xs hover:bg-yellow-800">
+                            Sign in
+                        </button>
+                    </div>
+                </form>
+                <form id="registerForm" class="space-y-6 hidden">
+                    <div class="border-slate-200 border-1 bg-white rounded-lg p-5 space-y-6">
+                        <div>
+                            <label for="reg-username" class="block sm:text-sm/6 text-sm font-medium text-gray-900">Username</label>
+                            <input type="text" name="reg-username" id="reg-username" required placeholder="Enter your username" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-yellow-800">
+                        </div>
+
+                        <div>
+                            <label for="reg-email" class="block sm:text-sm/6 text-sm font-medium text-gray-900">Email</label>
+                            <input type="email" name="reg-email" id="reg-email" required placeholder="Enter your email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-yellow-800">
+                        </div>
+
+                        <div>
+                            <label for="reg-password" class="block sm:text-sm/6 text-sm font-medium text-gray-900">Password</label>
+                            <input type="password" name="reg-password" id="reg-password" required placeholder="Enter your password" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-yellow-800">
+                        </div>
+
+                        <button type="submit" class="flex w-full justify-center rounded-md bg-amber-950 px-3 py-1.5 text-sm font-semibold text-white shadow-xs hover:bg-yellow-800">
+                            Register
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="h-screen w-1/2"></div>
     </div>
 
+    <script>
+        document.getElementById('signInBtn').addEventListener('click', function() {
+            document.getElementById('signInForm').classList.remove('hidden');
+            document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById('signInBtn').classList.add('text-gray-900');
+            document.getElementById('signInBtn').classList.remove('text-gray-400');
+            document.getElementById('registerBtn').classList.add('text-gray-400');
+            document.getElementById('registerBtn').classList.remove('text-gray-900');
+        });
 
-    <div class="pl-5 w-70 lg:mt-10 lg:w-100 lg:pl-20 sm:pl-10 pr-0 mb-0">
-    <form class="space-y-6" action="#" method="POST">
-    <div class="border-slate-200 border-1 bg-white rounded-lg p-5 space-y-6">
-      <div>
-        <label for="email" class="block sm:text-sm/6 text-sm font-medium text-gray-900">Username</label>
-        <div class="mt-2">
-          <input type="email" name="email" id="email" autocomplete="email" required placeholder="Enter your username" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-yellow-800 sm:text-sm/6">
-        </div>
-      </div>
-
-      <div>
-        <div class="flex items-center justify-between">
-          <label for="password" class="block sm:text-sm/6 text-sm font-medium text-gray-900">Password</label>
-          <div class="text-sm">
-          </div>
-        </div>
-        <div class="mt-2">
-          <input type="password" name="password" id="password" autocomplete="current-password" required placeholder="Enter your password"  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-yellow-800 sm:text-sm/6">
-        </div>
-        
-      </div>
-
-      <div class="flex items-center justify-between">
-        <div class="text-sm">
-          </div>
-          <div class="text-sm">
-            <a href="#" class="font-semibold text-sky-600 hover:text-sky-500">Forgot password?</a>
-          </div>
-        </div>
-      </div>
-      <div>
-        <button type="submit" class="flex w-full justify-center rounded-md bg-amber-950 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-yellow-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-950">Sign in</button>
-      </div>
-    </form>
-    </div>
-        </div>
-
-        <div class=" h-screen w-1/2">
-
-        </div>
-
-     
-    </div>
+        document.getElementById('registerBtn').addEventListener('click', function() {
+            document.getElementById('signInForm').classList.add('hidden');
+            document.getElementById('registerForm').classList.remove('hidden');
+            document.getElementById('signInBtn').classList.remove('text-gray-900');
+            document.getElementById('signInBtn').classList.add('text-gray-400');
+            document.getElementById('registerBtn').classList.remove('text-gray-400');
+            document.getElementById('registerBtn').classList.add('text-gray-900');
+        });
+    </script>
 </body>
 </html>
-
-        
